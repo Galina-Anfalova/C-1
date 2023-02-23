@@ -1,73 +1,108 @@
-﻿//Задача 2: Напишите программу, которая на вход принимает два числа и выдаёт, какое число большее, а какое меньшее.
+﻿//Задача 13: Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет.Через строку решать нельзя.
 
-// a = 5; b = 7 -> max = 7
-// a = 2 b = 10 -> max = 10
-// a = -9 b = -3 -> max = -3
+//645 -> 5
 
-/*Console.WriteLine("Введите 1 числа для сравнения: ");
-int a = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите 2 число для сравнения: ");
-int b = Convert.ToInt32(Console.ReadLine());
-if (a > b)
-   Console.WriteLine("Первое число больше второго");
-else 
-  {
-     Console.WriteLine("Второе число больше первого");
-  }*/
+//78 -> третьей цифры нет
 
-//Задача 4: Напишите программу, которая принимает на вход три числа и выдаёт максимальное из этих чисел.
+//32679 -> 6
 
-//2, 3, 7 -> 7
-// 44 5 78 -> 78
-// 22 3 9 -> 22
+/*Console.WriteLine("Введите число");
+int num = Convert.ToInt32(Console.ReadLine());
+int num2 = num;
+int count = 0;
+int res = 0;
 
-/* Console.Write("Введите 1 число: ");
- int i = Convert.ToInt32(Console.ReadLine());
- Console.Write("Введите 2 число: ");
- int v = Convert.ToInt32(Console.ReadLine());
- Console.Write("Введите 3 число: ");
- int b = Convert.ToInt32(Console.ReadLine());
-if (i >= b & i >= v) 
- {
-     Console.WriteLine(i);
- }
-else if (b >= i & b >= v)
- {
-     Console.WriteLine(b);
- }
-else
+while (num > 0)
 {
-      Console.WriteLine(v);
-}*/
-
-//Задача 6: Напишите программу, которая на вход принимает число и выдаёт, является ли число чётным (делится ли оно на два без остатка).
-
-//4 -> да
-//-3 -> нет
-//7 -> нет
-
-/* Console.WriteLine("Введите число: ");
-int a = Convert.ToInt32(Console.ReadLine());
-if (a % 2 == 0)
-{
-    Console.WriteLine(a);    
+    count++;
+    num = num / 10;
 }
+
+if (count < 3) Console.WriteLine($"{num2}-> третьей цифры нет");
 else
 {
-    Console.WriteLine("Число нечётное");
+    for (int i = 0; i < 3; i++)
+    {
+        count = count - 1;
+        int j = 0, b = 1, a = 10, n = count;
+        while (j != n)
+        {
+            j++;
+            b *= a;
+        }
+        res = num2 / b;
+    }
+    Console.WriteLine($"{num2}->{res % 10}");
 }*/
 
-//Задача 8: Напишите программу, которая на вход принимает число (N), а на выходе показывает все чётные числа от 1 до N.
+//Задача 10: Напишите программу, которая принимает на вход трёхзначное число и на выходе показывает вторую цифру этого числа. Через строку решать нельзя.
 
-//5 -> 2, 4
-//8 -> 2, 4, 6, 8
+//456 -> 5
+//782 -> 8
+//918 -> 1
 
-/*Console.WriteLine("Введите число: ");
-int n = Convert.ToInt32(Console.ReadLine());
 
-for (int i = 1; i <= n; i++)
+/*Console.Write("Введите трёхзначное число: ");
+int number = Convert.ToInt32(Console.ReadLine());
+if (number < 100 || number >= 1000)
+{
+    Console.WriteLine("Число не трёхзначное, введите повторно");
+    return;
+}
+int a = number / 10 % 10;
+Console.WriteLine("Вторая цифра:" + a);*/
 
- if (i % 2 == 0)
- {
-    Console.Write(i+ " ");
- }*/
+//Задача 15: Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
+
+//6 -> да
+//7 -> да
+//1 -> нет
+
+/*Console.WriteLine("Введите номер дня недели:");
+int number = Convert.ToInt32(Console.ReadLine());
+switch(number)
+{
+    case 1:
+    Console.WriteLine("Понедельник");
+    break;
+
+    case 2:
+    Console.WriteLine("Вторник");
+    break;
+    
+    case 3:
+    Console.WriteLine("Среда");
+    break;
+    
+    case 4:
+    Console.WriteLine("Четверг");
+    break;
+
+    case 5:
+    Console.WriteLine("Пятница");
+    break;
+
+    case 6:
+    Console.WriteLine("Суббота");
+    break;
+
+    case 7:
+    Console.WriteLine("Воскресение");
+    break;
+
+    default:
+    Console.WriteLine("Введен не тот номер недели");
+    break;
+}
+
+if (number <= 7)
+{
+    if (number >= 6 && number <= 7)
+    {
+        Console.WriteLine("Выходной!!!");
+    }
+    else
+    {
+        Console.WriteLine("Жаль, но придётся ещё поработать");
+    }
+}*/
